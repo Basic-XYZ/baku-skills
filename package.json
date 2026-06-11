@@ -1,0 +1,15 @@
+{
+  "name": "baku-skills",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Personal skill repository and local skill installer.",
+  "bin": {
+    "skills": "bin/skills.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "check": "node bin/skills.js --help"
+  }
+}
