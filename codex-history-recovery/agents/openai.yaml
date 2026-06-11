@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex History Recovery"
+  short_description: "切换账号、API 或 provider 后恢复 Codex Desktop 本地历史"
+  default_prompt: "使用 $codex-history-recovery 检查并恢复切换账号、API 或 provider 后的 Codex Desktop 本地历史。"

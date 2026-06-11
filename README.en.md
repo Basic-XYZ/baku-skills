@@ -7,7 +7,7 @@
 #### Personal Agent Skills extracted from real workflows
 
 [![License](https://img.shields.io/badge/License-MIT-3B82F6?style=for-the-badge)](./LICENSE)
-[![Skills](https://img.shields.io/badge/Skills-2-10B981?style=for-the-badge)](#skills)
+[![Skills](https://img.shields.io/badge/Skills-3-10B981?style=for-the-badge)](#skills)
 [![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-8B5CF6?style=for-the-badge)](https://agentskills.io)
 
 </div>
@@ -20,6 +20,7 @@ This repository follows a flat skill layout similar to `khazix-skills`: each ski
 |---|---|
 | [**boss-job-hunter**](./boss-job-hunter/SKILL.md) | Find, screen, rank, and prepare for BOSS Zhipin jobs from a resume and job preferences |
 | [**coding-discipline**](./coding-discipline/SKILL.md) | Engineering discipline for coding, debugging, refactoring, review, and AI-generated code |
+| [**codex-history-recovery**](./codex-history-recovery/SKILL.md) | Recover Codex Desktop local history visibility after account, API, provider, or model switches |
 
 ## Install
 
@@ -63,6 +64,11 @@ baku-skills/
 │   ├── agents/
 │   ├── examples/
 │   └── references/
+├── codex-history-recovery/
+│   ├── SKILL.md
+│   ├── README.md
+│   ├── agents/
+│   └── scripts/
 ├── coding-discipline/
 │   ├── SKILL.md
 │   ├── references/

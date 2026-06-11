@@ -7,7 +7,7 @@
 #### 我自己在真实工作流里跑过、觉得值得留下的 Agent Skills
 
 [![License](https://img.shields.io/badge/License-MIT-3B82F6?style=for-the-badge)](./LICENSE)
-[![Skills](https://img.shields.io/badge/Skills-2-10B981?style=for-the-badge)](#skills)
+[![Skills](https://img.shields.io/badge/Skills-3-10B981?style=for-the-badge)](#skills)
 [![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-8B5CF6?style=for-the-badge)](https://agentskills.io)
 
 ![Codex](https://img.shields.io/badge/Codex-Skill-10B981?style=flat-square&logo=openai&logoColor=white)
@@ -29,6 +29,7 @@
 |---|---|---|
 | [**boss-job-hunter（BOSS 求职猎手）**](#boss-job-hunterboss-求职猎手) | 从简历和偏好出发，搜索、筛选、评分 BOSS 直聘岗位，并给出简历和面试建议 | [SKILL.md](./boss-job-hunter/SKILL.md) |
 | [**coding-discipline（编码纪律）**](#coding-discipline编码纪律) | 写代码、修 bug、重构、审查时先收束目标和验证标准，避免 AI 乱猜和过度设计 | [SKILL.md](./coding-discipline/SKILL.md) |
+| [**codex-history-recovery（Codex 历史恢复）**](#codex-history-recoverycodex-历史恢复) | 切换账号、API 或 provider 后，检查和恢复 Codex Desktop 本地历史可见性 | [SKILL.md](./codex-history-recovery/SKILL.md) |
 
 ---
 
@@ -121,6 +122,42 @@ npx skills add https://github.com/Basic-XYZ/baku-skills --skill coding-disciplin
 <table>
 <tr><td>
 
+### codex-history-recovery（Codex 历史恢复）
+
+> *"历史不是没了，很多时候只是 provider / model 元数据不一致，侧边栏把它过滤掉了。"*
+
+这个 skill 用来处理 Codex Desktop 本地历史记录的恢复和归档清理。它的核心判断是：`state_5.sqlite` 只是索引 / 缓存，很多线程元数据还会从 `rollout-*.jsonl` 重建，所以修复不能只改 SQLite。
+
+**它会做什么**
+
+- 只读检查 `~/.codex/state_5.sqlite`、active / archived rollout 文件和 provider / model 元数据
+- dry-run 预览 provider / model 同步，不直接写入
+- 同步 SQLite `threads` 表和 rollout JSONL 里的 `session_meta` / `turn_context`
+- 修复恢复后旧线程显示成“刚刚”的时间问题
+- 预览和删除 archived 历史记录，并自动创建回滚备份
+- 从脚本生成的 SQLite / JSONL 备份中恢复
+
+**边界很重要**
+
+它不打印密钥、token、`.env` 或对话正文；不默认修改历史记录的 `cwd`；不删除 active history。涉及写入或归档删除时，必须先 dry-run，并优先让用户关闭 Codex Desktop 后再 apply。
+
+**怎么触发**
+
+```text
+切换 API 后 Codex 历史没了
+帮我看看 Codex Desktop 旧聊天还在不在
+恢复一下 Codex 历史的 provider
+删除归档里的 Codex 历史记录，先 dry-run
+```
+
+→ [SKILL.md](./codex-history-recovery/SKILL.md) · [README](./codex-history-recovery/README.md)
+
+</td></tr>
+</table>
+
+<table>
+<tr><td>
+
 ### coding-discipline（编码纪律）
 
 > *"先把目标、假设和验证标准讲清楚，再写最少的代码。"*
@@ -172,6 +209,11 @@ baku-skills/
 │   ├── agents/
 │   ├── examples/
 │   └── references/
+├── codex-history-recovery/
+│   ├── SKILL.md
+│   ├── README.md
+│   ├── agents/
+│   └── scripts/
 ├── coding-discipline/
 │   ├── SKILL.md
 │   ├── references/
