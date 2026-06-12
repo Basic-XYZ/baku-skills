@@ -4,6 +4,8 @@
 
 如果 `tdd`、`diagnose`、`review`、`request-refactor-plan` 或 `karpathy-guidelines` 已安装，可以叠加使用。未安装时，不要停在“缺少 skill”；按下面的内置流程继续执行。
 
+UI、前端、原型、视觉还原或设计系统任务仍按本文件选择主模式；只是额外读取 [frontend-ui-work.md](frontend-ui-work.md) 作为附加边界。
+
 ## 只读 / 方案
 
 适用：用户说“先研究”“只排查”“先方案”“不要执行”“先别改”“只读看看”，或明确要求先不改代码、不跑命令、不修复。

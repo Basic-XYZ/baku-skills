@@ -17,6 +17,7 @@
 - 审查分支、PR、diff 或 AI 生成补丁
 - 规划或执行重构
 - 先研究、只排查、先方案、不要执行的只读任务
+- UI、前端实现、原型、视觉还原或设计系统相关编码任务
 - 降低复杂度，避免推测性过度设计
 
 对于错别字或一行配置这类小改，skill 允许压缩流程：做最小改动，并运行最便宜的相关检查。
@@ -94,6 +95,7 @@ ln -s /path/to/coding-discipline ~/.agents/skills/coding-discipline
 .
 ├── SKILL.md
 ├── references/
+│   ├── frontend-ui-work.md
 │   ├── maturity-checklist.md
 │   ├── related-skills.md
 │   └── mode-routing.md
