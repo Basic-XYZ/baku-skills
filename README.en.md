@@ -18,8 +18,8 @@ This repository follows a flat skill layout similar to `khazix-skills`: each ski
 
 | Name | Summary |
 |---|---|
-| [**boss-job-hunter**](./boss-job-hunter/SKILL.md) | Find, screen, rank, and prepare for BOSS Zhipin jobs from a resume and job preferences |
 | [**coding-discipline**](./coding-discipline/SKILL.md) | Engineering discipline for coding, debugging, refactoring, review, and AI-generated code |
+| [**boss-job-hunter**](./boss-job-hunter/SKILL.md) | Find, screen, rank, and prepare for BOSS Zhipin jobs from a resume and job preferences |
 | [**codex-history-recovery**](./codex-history-recovery/SKILL.md) | Recover Codex Desktop local history visibility after account, API, provider, or model switches |
 
 ## Install
@@ -59,6 +59,10 @@ npx skills add https://github.com/Basic-XYZ/baku-skills --skill coding-disciplin
 
 ```text
 baku-skills/
+├── coding-discipline/
+│   ├── SKILL.md
+│   ├── references/
+│   └── scripts/
 ├── boss-job-hunter/
 │   ├── SKILL.md
 │   ├── agents/
@@ -68,10 +72,6 @@ baku-skills/
 │   ├── SKILL.md
 │   ├── README.md
 │   ├── agents/
-│   └── scripts/
-├── coding-discipline/
-│   ├── SKILL.md
-│   ├── references/
 │   └── scripts/
 ├── bin/
 │   └── skills.js
