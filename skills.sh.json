@@ -1,0 +1,21 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Engineering",
+      "description": "Skills for disciplined coding, debugging, review, and technical workflow control.",
+      "skills": [
+        "coding-discipline"
+      ]
+    },
+    {
+      "title": "Workflows",
+      "description": "Practical workflow skills for job search and local Codex maintenance.",
+      "skills": [
+        "boss-job-hunter",
+        "codex-history-recovery"
+      ]
+    }
+  ]
+}
