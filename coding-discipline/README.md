@@ -16,6 +16,7 @@
 - 修 bug、回归、失败测试或性能问题
 - 审查分支、PR、diff 或 AI 生成补丁
 - 规划或执行重构
+- 约束编码规范、命名、注释和公共接口可维护性
 - 先研究、只排查、先方案、不要执行的只读任务
 - UI、前端实现、原型、视觉还原或设计系统相关编码任务
 - 降低复杂度，避免推测性过度设计
@@ -95,6 +96,7 @@ ln -s /path/to/coding-discipline ~/.agents/skills/coding-discipline
 .
 ├── SKILL.md
 ├── references/
+│   ├── code-style.md
 │   ├── frontend-ui-work.md
 │   ├── maturity-checklist.md
 │   ├── related-skills.md
