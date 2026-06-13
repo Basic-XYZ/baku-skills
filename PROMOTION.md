@@ -2,6 +2,13 @@
 
 这个文件用于真实推广，不用于刷安装量或伪造使用数据。`skills.sh` 的安装量应来自真实用户执行官方安装命令。
 
+## 已发布
+
+| 时间 | 渠道 | 链接 | 说明 |
+|---|---|---|---|
+| 2026-06-13 | GitHub Release | https://github.com/Basic-XYZ/baku-skills/releases/tag/v0.1.0 | 首个公开版本发布帖 |
+| 2026-06-13 | GitHub Discussions | https://github.com/Basic-XYZ/baku-skills/discussions/1 | Show and tell 反馈征集帖 |
+
 ## 推荐入口
 
 优先级按“最可能带来真实 Agent Skill 用户”排序：
