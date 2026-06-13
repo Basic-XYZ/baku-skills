@@ -8,6 +8,7 @@
 
 [![License](https://img.shields.io/badge/License-MIT-3B82F6?style=for-the-badge)](./LICENSE)
 [![Skills](https://img.shields.io/badge/Skills-3-10B981?style=for-the-badge)](#skills)
+[![skills.sh](https://skills.sh/b/Basic-XYZ/baku-skills)](https://skills.sh/Basic-XYZ/baku-skills)
 [![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-8B5CF6?style=for-the-badge)](https://agentskills.io)
 
 ![Codex](https://img.shields.io/badge/Codex-Skill-10B981?style=flat-square&logo=openai&logoColor=white)
@@ -20,6 +21,8 @@
 都是我自己做事时真的需要，整理成 `SKILL.md` 之后能反复用上的东西。这个仓库不追求数量，主要放两类 skill：一种是能直接帮我完成具体任务的，一种是能约束 Agent 工作方式、减少返工的。
 
 这里的每个 Skill 都是 Agent 可以直接加载的结构化指令集，按 [Agent Skills](https://agentskills.io) 的目录习惯组织。Claude Code、Codex、OpenCode、OpenClaw 这类支持 `SKILL.md` 的工具都可以按目录安装。
+
+关键词：`agent-skills`、`codex-skills`、`claude-code-skills`、`coding-agent`、`ai-agents`、`skills.sh`。
 
 ---
 
@@ -39,6 +42,8 @@
 
 ```bash
 npx skills add https://github.com/Basic-XYZ/baku-skills --skill coding-discipline
+npx skills add https://github.com/Basic-XYZ/baku-skills --skill boss-job-hunter
+npx skills add https://github.com/Basic-XYZ/baku-skills --skill codex-history-recovery
 ```
 
 把 `--skill` 换成要装的目录名，比如 `boss-job-hunter` 或 `coding-discipline`。安装器应该只安装包含 `SKILL.md` 的那个 skill 目录，不要把整个仓库当成一个 skill。
