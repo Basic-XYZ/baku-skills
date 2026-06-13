@@ -13,6 +13,7 @@ REQUIRED_FILES = [
     "LICENSE",
     "CHANGELOG.md",
     "CONTRIBUTING.md",
+    "references/ai-coding-antipatterns.md",
     "references/code-style.md",
     "references/frontend-ui-work.md",
     "references/mode-routing.md",
@@ -26,16 +27,25 @@ SECRET_PATTERNS = [
     re.compile(r"(?i)(api[_-]?key|secret|token)\s*[:=]\s*['\"][^'\"]{12,}['\"]"),
 ]
 LOCAL_LINK = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
+REFERENCE_LINK = re.compile(r"\[[^\]]+\]\(references/([^)#]+)(?:#[^)]+)?\)")
 REQUIRED_TEXT = {
     "SKILL.md": [
         "## 相关 Skill 与安装",
         "## 内置纪律",
         "## 交付护栏",
         "## 完成标准",
+        "ai-coding-antipatterns.md",
         "code-style.md",
         "只读 / 方案",
         "frontend-ui-work.md",
         "不能结束的情况",
+    ],
+    "references/ai-coding-antipatterns.md": [
+        "## 禁止静默 fallback",
+        "## 禁止业务 catch-all",
+        "## 测试必须能发现缺陷",
+        "## 禁止硬编码查找表实现",
+        "## 调试日志生命周期",
     ],
     "references/code-style.md": [
         "## 优先级",
@@ -58,7 +68,9 @@ REQUIRED_TEXT = {
         "## Handoff Evidence",
     ],
     "references/mode-routing.md": [
+        "## 目录",
         "## 只读 / 方案",
+        "ai-coding-antipatterns.md",
         "code-style.md",
         "frontend-ui-work.md",
         "只读 / 方案模式优先于所有实现、修复、测试、安装和继续义务",
@@ -67,6 +79,10 @@ REQUIRED_TEXT = {
         "功能 / 行为变更",
         "故障 / 性能回归",
         "审查的两个轴",
+    ],
+    "references/maturity-checklist.md": [
+        "## 目录",
+        "## 日常工作的压缩门禁",
     ],
     "references/related-skills.md": [
         "Matt Pocock skills",
@@ -152,10 +168,28 @@ def check_required_text() -> None:
             fail(f"{relative_path} 缺少必需文本: {', '.join(missing)}")
 
 
+def check_skill_reference_links() -> None:
+    skill_text = read(ROOT / "SKILL.md")
+    referenced = {match.group(1) for match in REFERENCE_LINK.finditer(skill_text)}
+    expected = {path.split("/", 1)[1] for path in REQUIRED_FILES if path.startswith("references/")}
+    missing = sorted(expected - referenced)
+    if missing:
+        fail(f"SKILL.md 未显式引用 reference: {', '.join(missing)}")
+
+
+def check_long_references_have_toc() -> None:
+    for path in (ROOT / "references").glob("*.md"):
+        text = read(path)
+        if len(text.splitlines()) > 100 and "## 目录" not in text:
+            fail(f"{path.relative_to(ROOT)} 超过 100 行但缺少目录")
+
+
 def main() -> None:
     check_required_files()
     check_skill_frontmatter()
     check_required_text()
+    check_skill_reference_links()
+    check_long_references_have_toc()
     check_markdown_links()
     check_for_obvious_secrets()
     print("OK: coding-discipline skill 包校验通过")

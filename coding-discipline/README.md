@@ -15,6 +15,7 @@
 - 实现功能或行为变更
 - 修 bug、回归、失败测试或性能问题
 - 审查分支、PR、diff 或 AI 生成补丁
+- 识别静默 fallback、catch-all、弱测试、假实现和调试日志误删等 AI 编码反模式
 - 规划或执行重构
 - 约束编码规范、命名、注释和公共接口可维护性
 - 先研究、只排查、先方案、不要执行的只读任务
@@ -96,6 +97,7 @@ ln -s /path/to/coding-discipline ~/.agents/skills/coding-discipline
 .
 ├── SKILL.md
 ├── references/
+│   ├── ai-coding-antipatterns.md
 │   ├── code-style.md
 │   ├── frontend-ui-work.md
 │   ├── maturity-checklist.md

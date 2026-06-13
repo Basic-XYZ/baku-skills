@@ -4,9 +4,20 @@
 
 如果 `tdd`、`diagnose`、`review`、`request-refactor-plan` 或 `karpathy-guidelines` 已安装，可以叠加使用。未安装时，不要停在“缺少 skill”；按下面的内置流程继续执行。
 
+写业务逻辑、错误处理、测试、调试修复或审查 AI 生成代码时，额外读取 [ai-coding-antipatterns.md](ai-coding-antipatterns.md) 作为反模式检查。
+
 实际修改代码、设计公共接口、做代码审查或接收 AI 生成补丁时，额外读取 [code-style.md](code-style.md) 作为编码规范与注释边界。
 
 UI、前端、原型、视觉还原或设计系统任务仍按本文件选择主模式；只是额外读取 [frontend-ui-work.md](frontend-ui-work.md) 作为附加边界。
+
+## 目录
+
+- [只读 / 方案](#只读--方案)
+- [微小修改](#微小修改)
+- [功能 / 行为变更](#功能--行为变更)
+- [故障 / 性能回归](#故障--性能回归)
+- [重构 / 架构调整](#重构--架构调整)
+- [审查](#审查)
 
 ## 只读 / 方案
 
