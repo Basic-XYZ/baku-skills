@@ -2,3 +2,5 @@
 node_modules/
 .agents/
 private/
+garden-gpt-image-2
+.codex-output
