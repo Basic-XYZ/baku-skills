@@ -4,14 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Baku Cards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=Fira+Code:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet">
   <style>
     :root { --ink:#161A22; --paper:#F7F4EA; --field:#E9E2D0; --green:#18A058; --blue:#2563EB; --amber:#D97706; --red:#D64B3A; --line:#D8D0BD; }
     * { box-sizing:border-box; }
-    body { margin:0; background:#D8D0BD; color:var(--ink); font:16px/1.65 "Noto Sans SC", system-ui, sans-serif; padding:32px; }
+    body { margin:0; background:#D8D0BD; color:var(--ink); font:16px/1.65 "Noto Sans SC", -apple-system, "PingFang SC", system-ui, sans-serif; padding:32px; }
     .deck { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px; max-width:1180px; margin:auto; }
     .card { aspect-ratio:3/4; background:var(--paper); border:1px solid var(--line); border-radius:8px; padding:28px; display:flex; flex-direction:column; justify-content:space-between; }
-    .kicker { font:700 .78rem/1 "JetBrains Mono", monospace; color:var(--green); text-transform:uppercase; }
-    h1, h2 { font-family:"Noto Serif SC", serif; line-height:1.12; margin:18px 0; }
+    .kicker { font:600 .78rem/1 "Fira Code", monospace; color:var(--green); text-transform:uppercase; }
+    h1, h2 { font-family:"Noto Serif SC", "Fraunces", serif; line-height:1.12; margin:18px 0; }
     h1 { font-size:clamp(2rem, 7vw, 3.4rem); }
     h2 { font-size:clamp(1.6rem, 5vw, 2.4rem); }
     .mark { width:48px; height:48px; border-radius:50%; object-fit:cover; border:1px solid var(--line); }

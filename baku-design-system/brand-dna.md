@@ -21,9 +21,11 @@
 ## 字体基因
 
 - 中文正文：`Noto Sans SC`, `PingFang SC`, system-ui。
-- 中文标题：优先 `Noto Serif SC` 或本地宋/明朝风格字体，用来制造“笔记、文档、判断”的气质。
-- 英文标签：`IBM Plex Sans`, `Inter`, system-ui。不要整页都用过度科技感等宽字体。
-- 代码/终端：`JetBrains Mono`, `SFMono-Regular`, `Menlo`, monospace，只用于代码、命令和数据。
+- 中文标题：优先 `Noto Serif SC`，用于制造“笔记、文档、判断”的气质。
+- 英文/UI：`Inter`, system-ui，保持清爽和工具感。
+- 英文装饰：`Fraunces` 用于 editorial / display 气质，`Caveat` 只用于少量手写标记。
+- 代码/终端：`Fira Code`, `SFMono-Regular`, `Menlo`, monospace，只用于代码、命令和数据。
+- 模板默认从 Google Fonts 加载 `Noto Sans SC`、`Noto Serif SC`、`Inter`、`Fraunces`、`Caveat`、`Fira Code`；如果网络不可用，回退到系统字体。
 
 字号建议：
 
@@ -44,10 +46,10 @@
 
 ## 虚拟形象
 
-Baku 的默认虚拟形象是一个“程序员型个人 IP”：
+Baku 的默认虚拟形象是一个“工作台型个人 IP”：
 
 - 中长深黑色头发，略蓬松，有手绘铅笔质感。
-- 圆框眼镜、黑色 T 恤、坐在电脑前，表达程序员 / builder 身份。
+- 圆框眼镜、黑色 T 恤、坐在电脑前，表达 builder / creator 身份。
 - 黄色背景是主要记忆点，配合蓝色电脑、代码符号、植物、咖啡杯和笔记本。
 - 表情平静、略认真，可以挥手或做轻量解释姿势；不要夸张卖萌。
 - 头像构图保留上半身、电脑和桌面道具，不要裁成只有大头。
@@ -56,7 +58,7 @@ Baku 的默认虚拟形象是一个“程序员型个人 IP”：
 
 - 默认兼容头像：`assets/avatar.jpg`
 - 多头像库：`assets/avatars/`
-- 当前多头像库来自 Baku 程序员桌面系列，统一为 816x816 PNG。
+- 当前多头像库来自 Baku 工作台系列，统一为 816x816 PNG。
 - 旧模板仍可引用 `assets/avatar.jpg`；新页面优先从 `assets/avatars/` 按场景挑选更合适的头像。
 - 头像是可选视觉锚点，不是强制元素。个人介绍、作者页、品牌页、图文卡片封面优先使用；普通文档页、工具页、报告页可以不使用。
 

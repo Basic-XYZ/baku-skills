@@ -24,6 +24,14 @@
 - 中段：Evidence Stack、Dense Dashboard、Document Split、Risk Matrix。
 - 尾部：落地建议、证据索引、下一步。
 
+## 字体
+
+- 中文正文：`"Noto Sans SC", -apple-system, "PingFang SC", system-ui, sans-serif`。
+- 中文标题：`"Noto Serif SC", "Noto Sans SC", serif`。
+- 英文/UI：`Inter, "Noto Sans SC", system-ui, sans-serif`。
+- 英文装饰：`Fraunces` 用于封面英文、编号、栏目名；`Caveat` 用于极少量手写标记。
+- 代码/数据：`"Fira Code", "SFMono-Regular", Menlo, monospace`。
+
 ## 头像规则
 
 - 使用 `assets/avatar.jpg` 时，不要裁成只有大头；尽量保留电脑、手绘黄底和桌面道具。

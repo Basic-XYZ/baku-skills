@@ -22,7 +22,9 @@
 
 ## 字体
 
-- 使用 `Inter, -apple-system, system-ui, "PingFang SC", "Noto Sans SC", sans-serif`。
+- 正文使用 `Inter, "Noto Sans SC", -apple-system, system-ui, "PingFang SC", sans-serif`。
+- 中文标题可使用 `"Noto Serif SC", "Noto Sans SC", serif`，但不要变成古典书法风。
+- 英文装饰只少量使用 `Fraunces`，代码和路径使用 `"Fira Code", monospace`。
 - 标题可以略紧，但不要按 viewport 缩放字体。
 - 英文大标题可轻微负字距；中文标题保持 `letter-spacing: 0`。
 - 推荐层级：

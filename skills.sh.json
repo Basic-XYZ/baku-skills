@@ -19,9 +19,8 @@
     },
     {
       "title": "工作流",
-      "description": "用于求职筛选和本地 Codex 维护的实用工作流 skill。",
+      "description": "用于本地 Codex 维护的实用工作流 skill。",
       "skills": [
-        "boss-job-hunter",
         "codex-history-recovery"
       ]
     }

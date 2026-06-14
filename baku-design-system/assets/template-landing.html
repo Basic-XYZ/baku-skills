@@ -4,15 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Baku Landing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet">
   <style>
     :root { --ink:#161A22; --paper:#F7F4EA; --field:#E9E2D0; --green:#18A058; --blue:#2563EB; --amber:#D97706; --line:#D8D0BD; }
     * { box-sizing: border-box; }
-    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.65 "Noto Sans SC", system-ui, sans-serif; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.65 "Noto Sans SC", -apple-system, "PingFang SC", system-ui, sans-serif; }
     .wrap { width:min(1180px, calc(100% - 32px)); margin:auto; }
     header { height:64px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); }
-    .brand { font-weight:800; letter-spacing:0; }
+    .brand { font:700 1.1rem/1 "Fraunces", "Noto Serif SC", serif; letter-spacing:0; }
     .hero { min-height:calc(100vh - 64px); display:grid; grid-template-columns:1.05fr .95fr; gap:48px; align-items:center; padding:40px 0 76px; }
-    h1 { margin:0; font:800 clamp(2.8rem, 7vw, 5.4rem)/1.02 "Noto Serif SC", serif; max-width:780px; }
+    h1 { margin:0; font:800 clamp(2.8rem, 7vw, 5.4rem)/1.02 "Noto Serif SC", "Fraunces", serif; max-width:780px; }
     .lead { margin:24px 0 0; max-width:640px; color:#3D4350; font-size:1.08rem; }
     .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
     .btn { border:1px solid var(--ink); background:var(--ink); color:var(--paper); padding:11px 16px; border-radius:6px; text-decoration:none; font-weight:700; }
@@ -33,7 +36,7 @@
         <p class="lead">把页面、卡片、工具和虚拟形象收束到同一套品牌 DNA，让每次输出都像同一个人做的。</p>
         <div class="actions"><a class="btn" href="#">开始构建</a><a class="btn secondary" href="#">查看规则</a></div>
       </div>
-      <aside class="avatar-card"><img src="./avatar.jpg" alt="Baku avatar"><p>Baku / programmer personal IP</p></aside>
+      <aside class="avatar-card"><img src="./avatar.jpg" alt="Baku avatar"><p>Baku / personal workbench</p></aside>
     </section>
     <section class="next">
       <div class="tile"><strong>页面</strong><p>教程、landing、作品集。</p></div>
