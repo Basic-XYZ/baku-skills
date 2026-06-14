@@ -1,0 +1,4 @@
+interface:
+  display_name: "Baku 正文配图"
+  short_description: "生成 Baku 风格的中文文章正文配图。"
+  default_prompt: "使用 $baku-illustrations 为这篇文章设计 shot list，并生成 Baku 风格正文配图。"

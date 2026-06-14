@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Baku Notion Warm Doc</title>
+  <style>
+    :root {
+      --text: rgba(0, 0, 0, .95);
+      --muted: #615d59;
+      --quiet: #a39e98;
+      --white: #ffffff;
+      --warm: #f6f5f4;
+      --dark: #31302e;
+      --blue: #0075de;
+      --blue-active: #005bab;
+      --badge-bg: #f2f9ff;
+      --badge-text: #097fe8;
+      --border: rgba(0, 0, 0, .1);
+      --shadow-card: rgba(0,0,0,.04) 0 4px 18px, rgba(0,0,0,.027) 0 2px 8px, rgba(0,0,0,.02) 0 1px 3px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--white);
+      font: 16px/1.5 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", sans-serif;
+      letter-spacing: 0;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      gap: 16px;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    nav a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    nav a:hover { text-decoration: underline; }
+
+    .hero {
+      padding: clamp(72px, 12vw, 124px) 0 clamp(64px, 9vw, 96px);
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 4px 9px;
+      border-radius: 9999px;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .125px;
+    }
+
+    h1 {
+      max-width: 880px;
+      margin: 22px auto 18px;
+      font-size: clamp(2.5rem, 7vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+      font-weight: 700;
+    }
+
+    .lead {
+      max-width: 680px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.4;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 8px 16px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      background: var(--blue);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .btn:hover { background: var(--blue-active); }
+
+    .btn.secondary {
+      background: rgba(0,0,0,.05);
+      color: var(--text);
+    }
+
+    .section {
+      padding: clamp(64px, 10vw, 104px) 0;
+    }
+
+    .section.alt {
+      background: var(--warm);
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding-left: calc(50vw - 50%);
+      padding-right: calc(50vw - 50%);
+    }
+
+    .section-head {
+      max-width: 720px;
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.05;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--white);
+      padding: 22px;
+      box-shadow: var(--shadow-card);
+      min-width: 0;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 22px;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .doc-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .doc-list li {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--white);
+      padding: 14px 16px;
+      color: var(--dark);
+    }
+
+    footer {
+      padding: 36px 0;
+      border-top: 1px solid var(--border);
+      color: var(--quiet);
+      font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      header { align-items: flex-start; flex-direction: column; padding: 16px 0; }
+      nav { flex-wrap: wrap; gap: 12px; }
+      .hero { text-align: left; }
+      .lead, h1 { margin-left: 0; }
+      .actions { justify-content: flex-start; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">Baku</div>
+      <nav aria-label="页面导航">
+        <a href="#features">Features</a>
+        <a href="#docs">Docs</a>
+        <a href="#next">Next</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <span class="badge">Notion Warm Doc</span>
+        <h1>把复杂内容整理成一张安静、清楚、可阅读的页面</h1>
+        <p class="lead">这套风格适合文档型产品页、知识库首页、方法论说明和轻量 landing。它使用暖白背景、近黑文字、轻边框和少量蓝色动作。</p>
+        <div class="actions">
+          <a class="btn" href="#features">查看结构</a>
+          <a class="btn secondary" href="#docs">阅读说明</a>
+        </div>
+      </section>
+
+      <section class="section alt" id="features">
+        <div class="section-head">
+          <h2>轻、稳、内容优先</h2>
+          <p>用排版和间距建立层级，不依赖大面积装饰。头像不是必需元素，页面可以只由文字、截图、图标和文档块构成。</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>Warm surface</h3>
+            <p>白色和暖白交替，保留纸张感，不使用冷灰玻璃质感。</p>
+          </article>
+          <article class="card">
+            <h3>Whisper border</h3>
+            <p>1px 轻边框提供结构，阴影低到只让层级被感知。</p>
+          </article>
+          <article class="card">
+            <h3>Blue action</h3>
+            <p>蓝色只用于主要动作、链接和 badge，不把页面染成蓝色。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="docs">
+        <div class="section-head">
+          <h2>文档块示例</h2>
+          <p>列表、引用、表格和步骤都要有轻样式，不能退回浏览器默认渲染。</p>
+        </div>
+        <ul class="doc-list">
+          <li><strong>结论：</strong>先告诉读者这页解决什么问题。</li>
+          <li><strong>证据：</strong>用 2-3 个文档块拆开背景、方法和约束。</li>
+          <li><strong>行动：</strong>最后给下一步，不做空泛总结。</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer id="next">Baku Design System · Notion Warm Doc style</footer>
+  </div>
+</body>
+</html>

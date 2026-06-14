@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Baku Landing</title>
+  <style>
+    :root { --ink:#161A22; --paper:#F7F4EA; --field:#E9E2D0; --green:#18A058; --blue:#2563EB; --amber:#D97706; --line:#D8D0BD; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.65 "Noto Sans SC", system-ui, sans-serif; }
+    .wrap { width:min(1180px, calc(100% - 32px)); margin:auto; }
+    header { height:64px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); }
+    .brand { font-weight:800; letter-spacing:0; }
+    .hero { min-height:calc(100vh - 64px); display:grid; grid-template-columns:1.05fr .95fr; gap:48px; align-items:center; padding:40px 0 76px; }
+    h1 { margin:0; font:800 clamp(2.8rem, 7vw, 5.4rem)/1.02 "Noto Serif SC", serif; max-width:780px; }
+    .lead { margin:24px 0 0; max-width:640px; color:#3D4350; font-size:1.08rem; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+    .btn { border:1px solid var(--ink); background:var(--ink); color:var(--paper); padding:11px 16px; border-radius:6px; text-decoration:none; font-weight:700; }
+    .btn.secondary { background:transparent; color:var(--ink); }
+    .avatar-card { border:1px solid var(--line); border-radius:8px; padding:28px; background:rgba(255,255,255,.36); }
+    .avatar-card img { width:100%; aspect-ratio:1; object-fit:cover; border-radius:6px; border:1px solid var(--line); }
+    .next { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:-40px; padding-bottom:80px; }
+    .tile { border-top:3px solid var(--green); background:var(--field); padding:20px; border-radius:6px; min-height:130px; }
+    @media (max-width:860px){ .hero,.next{grid-template-columns:1fr;} .next{margin-top:0;} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header><div class="brand">Baku</div><nav>Basic-XYZ</nav></header>
+    <section class="hero">
+      <div>
+        <h1>一个可长期复用的个人工作台设计系统</h1>
+        <p class="lead">把页面、卡片、工具和虚拟形象收束到同一套品牌 DNA，让每次输出都像同一个人做的。</p>
+        <div class="actions"><a class="btn" href="#">开始构建</a><a class="btn secondary" href="#">查看规则</a></div>
+      </div>
+      <aside class="avatar-card"><img src="./avatar.jpg" alt="Baku avatar"><p>Baku / programmer personal IP</p></aside>
+    </section>
+    <section class="next">
+      <div class="tile"><strong>页面</strong><p>教程、landing、作品集。</p></div>
+      <div class="tile"><strong>卡片</strong><p>图文、小红书、文章转卡片。</p></div>
+      <div class="tile"><strong>形象</strong><p>头像、个人 IP、视觉锚点。</p></div>
+    </section>
+  </div>
+</body>
+</html>

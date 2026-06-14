@@ -3,15 +3,23 @@
   "notGrouped": "bottom",
   "groupings": [
     {
-      "title": "Engineering",
-      "description": "Skills for disciplined coding, debugging, review, and technical workflow control.",
+      "title": "工程",
+      "description": "用于编码纪律、调试、审查和技术工作流控制的 skill。",
       "skills": [
-        "coding-discipline"
+        "baku-coding-discipline"
       ]
     },
     {
-      "title": "Workflows",
-      "description": "Practical workflow skills for job search and local Codex maintenance.",
+      "title": "设计",
+      "description": "用于 Baku 品牌页面、图文卡片、个人虚拟形象和文章配图的 skill。",
+      "skills": [
+        "baku-design-system",
+        "baku-illustrations"
+      ]
+    },
+    {
+      "title": "工作流",
+      "description": "用于求职筛选和本地 Codex 维护的实用工作流 skill。",
       "skills": [
         "boss-job-hunter",
         "codex-history-recovery"

@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Baku Retro Future Mainframe</title>
+  <style>
+    :root {
+      --paper: #050816;
+      --paper-soft: #0b1226;
+      --ink: #f7fbff;
+      --muted: #94a3ba;
+      --line: rgba(148, 163, 184, .18);
+      --green: #7cffd5;
+      --yellow: #d7ff24;
+      --blue: #6ea8ff;
+      --red: #ff6b4f;
+      --panel: rgba(255, 255, 255, .055);
+      --panel-strong: rgba(11, 18, 38, .82);
+      --shadow: 0 34px 110px rgba(0, 0, 0, .42);
+      --radius: 18px;
+      --shell: min(1480px, calc(100% - 48px));
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      overflow-x: clip;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      overflow-x: clip;
+      color: var(--ink);
+      background: linear-gradient(180deg, #050816, #071025 46%, #050816);
+      font: 16px/1.65 "PingFang SC", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;
+      letter-spacing: 0;
+    }
+
+    body::before {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      content: "";
+      pointer-events: none;
+      background:
+        linear-gradient(rgba(5, 8, 22, .64), rgba(5, 8, 22, .72)),
+        linear-gradient(90deg, rgba(124, 255, 213, .045) 1px, transparent 1px) 0 0 / 56px 56px,
+        linear-gradient(180deg, rgba(124, 255, 213, .035) 1px, transparent 1px) 0 0 / 56px 56px,
+        linear-gradient(112deg, transparent 0 54%, rgba(124, 255, 213, .07) 54% 54.2%, transparent 54.2%),
+        radial-gradient(circle at 50% 120%, rgba(215, 255, 36, .08), transparent 34rem),
+        radial-gradient(circle at center, transparent 0 44%, rgba(5, 8, 22, .72) 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    .shell {
+      position: relative;
+      z-index: 1;
+      width: var(--shell);
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: fixed;
+      top: 18px;
+      left: 50%;
+      z-index: 20;
+      display: flex;
+      width: min(1480px, calc(100% - 32px));
+      min-height: 58px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 12px 10px 16px;
+      background: rgba(5, 8, 22, .74);
+      border: 1px solid rgba(124, 255, 213, .16);
+      box-shadow: 0 18px 54px rgba(0, 0, 0, .28);
+      backdrop-filter: blur(18px);
+      transform: translateX(-50%);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      color: #071025;
+      background: var(--yellow);
+      border-radius: 50%;
+      font: 900 12px/1 "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      color: rgba(247, 251, 255, .76);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    nav a {
+      display: inline-flex;
+      min-height: 38px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 14px;
+      border-radius: 999px;
+    }
+
+    nav a.active {
+      color: #071025;
+      background: var(--yellow);
+    }
+
+    .hero {
+      display: grid;
+      min-height: 100dvh;
+      grid-template-columns: minmax(0, 1.12fr) minmax(360px, .88fr);
+      align-items: center;
+      gap: clamp(30px, 5vw, 80px);
+      padding: 118px 0 52px;
+    }
+
+    .kicker {
+      margin: 0 0 14px;
+      color: var(--green);
+      font: 900 12px/1.4 "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 1000px;
+      margin-bottom: 24px;
+      font-size: clamp(48px, 7vw, 112px);
+      font-weight: 900;
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    h1 .accent,
+    .metric strong,
+    .terminal .ok {
+      color: var(--yellow);
+      text-shadow: 0 0 34px rgba(215, 255, 36, .2);
+    }
+
+    .lead {
+      max-width: 760px;
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: clamp(18px, 2vw, 22px);
+      line-height: 1.7;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-weight: 900;
+    }
+
+    .btn.primary {
+      color: #071025;
+      background: var(--yellow);
+    }
+
+    .btn.secondary {
+      color: var(--ink);
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(124, 255, 213, .22);
+    }
+
+    .terminal {
+      position: relative;
+      overflow: hidden;
+      padding: 22px;
+      background:
+        radial-gradient(circle at 72% 22%, rgba(124, 255, 213, .16), transparent 28rem),
+        linear-gradient(145deg, rgba(124, 255, 213, .12), rgba(110, 168, 255, .08) 42%, rgba(5, 8, 22, .96));
+      border: 1px solid rgba(124, 255, 213, .22);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .terminal::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+      pointer-events: none;
+      background:
+        linear-gradient(115deg, transparent 0 34%, rgba(255, 255, 255, .14) 42%, transparent 52%),
+        repeating-linear-gradient(90deg, transparent 0 28px, rgba(255, 255, 255, .035) 28px 29px);
+      mix-blend-mode: screen;
+      opacity: .5;
+    }
+
+    .terminal > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .terminal-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 24px;
+      color: var(--muted);
+      font: 900 12px/1.4 "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+      text-transform: uppercase;
+    }
+
+    .terminal-top span {
+      color: #071025;
+      background: var(--yellow);
+      border-radius: 999px;
+      padding: 5px 9px;
+    }
+
+    .terminal h2 {
+      margin: 0 0 12px;
+      font-size: clamp(34px, 4vw, 58px);
+      line-height: .98;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .terminal p {
+      margin-bottom: 18px;
+      color: rgba(247, 251, 255, .78);
+      font-weight: 800;
+    }
+
+    .terminal-log {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 14px;
+      list-style: none;
+      background: rgba(5, 8, 22, .62);
+      border: 1px solid rgba(124, 255, 213, .16);
+      border-radius: 14px;
+      font: 700 13px/1.45 "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+    }
+
+    .terminal-log li {
+      color: rgba(247, 251, 255, .76);
+      overflow-wrap: anywhere;
+    }
+
+    .terminal-log li::before {
+      content: "> ";
+      color: var(--green);
+    }
+
+    .metric-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      padding: 0 0 72px;
+    }
+
+    .metric,
+    .case-card,
+    .timeline-item {
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, .09);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .metric {
+      min-height: 112px;
+      padding: 18px;
+    }
+
+    .metric span {
+      display: block;
+      color: var(--muted);
+      font: 800 12px/1.3 "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+    }
+
+    .metric strong {
+      display: block;
+      margin-top: 12px;
+      font-size: clamp(28px, 3vw, 44px);
+      line-height: 1;
+    }
+
+    .section {
+      padding: 42px 0 76px;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(120px, .2fr) minmax(0, 1fr);
+      align-items: start;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .section-head h2 {
+      max-width: 980px;
+      margin: 0;
+      font-size: clamp(34px, 5vw, 72px);
+      line-height: 1.04;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .case-card {
+      position: relative;
+      min-height: 320px;
+      padding: 24px;
+      overflow: hidden;
+    }
+
+    .case-card::after {
+      position: absolute;
+      top: 0;
+      right: 16px;
+      width: 1px;
+      height: 64px;
+      content: "";
+      background: linear-gradient(180deg, var(--yellow), transparent);
+      opacity: .42;
+    }
+
+    .case-index {
+      display: block;
+      margin-bottom: 18px;
+      color: rgba(247, 251, 255, .62);
+      font-size: 46px;
+      font-weight: 900;
+      line-height: .82;
+    }
+
+    .case-card h3 {
+      margin-bottom: 12px;
+      font-size: 26px;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .case-card p {
+      color: var(--muted);
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag-row span {
+      display: inline-flex;
+      min-height: 30px;
+      align-items: center;
+      padding: 0 10px;
+      color: var(--ink);
+      background: rgba(255, 255, 255, .07);
+      border: 1px solid rgba(124, 255, 213, .12);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+      border-left: 2px solid rgba(124, 255, 213, .22);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 22px 26px 24px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    .timeline-item::before {
+      position: absolute;
+      top: 28px;
+      left: -8px;
+      width: 14px;
+      height: 14px;
+      content: "";
+      background: var(--yellow);
+      border: 3px solid var(--paper);
+      border-radius: 50%;
+    }
+
+    .timeline-item time {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--green);
+      font: 900 13px/1.4 "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+    }
+
+    .timeline-item p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      width: var(--shell);
+      margin: 0 auto;
+      padding: 34px 0 44px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      :root {
+        --shell: min(100% - 32px, 760px);
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        transform: none;
+        border-left: 0;
+        border-right: 0;
+        border-radius: 0;
+      }
+
+      .hero,
+      .section-head,
+      .case-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 64px;
+      }
+
+      .metric-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        width: 100%;
+      }
+
+      nav a {
+        padding: 0 10px;
+      }
+
+      .metric-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .terminal,
+      .case-card,
+      .timeline-item {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#">
+      <span class="brand-mark">B</span>
+      <span>Baku Mainframe</span>
+    </a>
+    <nav aria-label="主导航">
+      <a class="active" href="#">Signal</a>
+      <a href="#cases">Cases</a>
+      <a href="#system">System</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <p class="kicker">AI Delivery Mainframe / Basic-XYZ</p>
+        <h1>把模型能力接进<span class="accent">真实工程系统</span></h1>
+        <p class="lead">这里替换成页面实际文案。保持结论先行，说明 Baku 正在解决什么问题、为什么可信，以及用户可以继续看哪条证据链。</p>
+        <div class="actions">
+          <a class="btn primary" href="#cases">查看案例</a>
+          <a class="btn secondary" href="#system">进入系统</a>
+        </div>
+      </div>
+
+      <aside class="terminal" aria-label="运行状态面板">
+        <div class="terminal-top">
+          <strong>Runtime Signal</strong>
+          <span>Online</span>
+        </div>
+        <h2>Agent Workbench</h2>
+        <p>用终端、指标和项目证据承载视觉锚点。这里可以换成产品截图、架构信号或个人 IP 图。</p>
+        <ul class="terminal-log">
+          <li><span class="ok">workflow</span> checked: context, prompt, artifact, callback</li>
+          <li><span class="ok">quality</span> checked: readable, mobile, shareable</li>
+          <li><span class="ok">brand</span> checked: Baku / Basic-XYZ</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="metric-strip" aria-label="关键指标">
+      <div class="metric"><span>ACTIVE CASES</span><strong>05</strong></div>
+      <div class="metric"><span>AI PIPELINES</span><strong>03</strong></div>
+      <div class="metric"><span>DELIVERY MODES</span><strong>04</strong></div>
+      <div class="metric"><span>STATUS</span><strong>RUN</strong></div>
+    </section>
+
+    <section id="cases" class="section">
+      <div class="section-head">
+        <p class="kicker">Case Archive</p>
+        <h2>用项目证据说明能力，而不是只写标签</h2>
+      </div>
+      <div class="case-grid">
+        <article class="case-card">
+          <span class="case-index">01</span>
+          <h3>会议到多产物交付链路</h3>
+          <p>替换成项目摘要。说明输入、编排、生成、回调和用户可见结果。</p>
+          <div class="tag-row"><span>ASR</span><span>Workflow</span><span>PPT/H5</span></div>
+        </article>
+        <article class="case-card">
+          <span class="case-index">02</span>
+          <h3>上下文与策略执行</h3>
+          <p>替换成项目摘要。强调用户出话、角色、策略选择和可解释输出。</p>
+          <div class="tag-row"><span>Context</span><span>Rerank</span><span>AI Sales</span></div>
+        </article>
+        <article class="case-card">
+          <span class="case-index">03</span>
+          <h3>个人 Agent 工作流</h3>
+          <p>替换成项目摘要。说明如何把经验沉淀为可复用 skill 和验证纪律。</p>
+          <div class="tag-row"><span>SKILL.md</span><span>Codex</span><span>Quality Gate</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="system" class="section">
+      <div class="section-head">
+        <p class="kicker">System Timeline</p>
+        <h2>把复杂链路拆成能检查的节点</h2>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item">
+          <time>01 / Input</time>
+          <h3>先确认内容、受众和成功标准</h3>
+          <p>避免一上来做视觉堆叠，先让页面知道自己要证明什么。</p>
+        </article>
+        <article class="timeline-item">
+          <time>02 / Build</time>
+          <h3>用主机面板承载信息密度</h3>
+          <p>终端、指标、case 卡和 timeline 可以让暗色页面保持可扫读。</p>
+        </article>
+        <article class="timeline-item">
+          <time>03 / Verify</time>
+          <h3>检查移动端、对比度和路径有效性</h3>
+          <p>复古未来风不能牺牲可读性；所有高亮都要服务信息。</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    Baku / Basic-XYZ · Retro Future Mainframe template
+  </footer>
+</body>
+</html>

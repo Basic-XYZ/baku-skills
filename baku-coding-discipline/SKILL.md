@@ -1,5 +1,5 @@
 ---
-name: coding-discipline
+name: baku-coding-discipline
 description: 写代码、修 bug、重构、审查实现和接收 AI 生成代码时的工程纪律入口 skill。用于实现功能、修改代码、定位故障、性能回归、设计接口、评估重构、处理技术债、做代码审查、降低复杂度、要求“别越改越复杂”，或要求先研究、只排查、先方案、不要执行时。融合 Karpathy 编码纪律、TDD / Diagnose / Review / Refactor Plan 工作流，以及工程成熟度门禁；相关 skill 缺失时先尝试安装，无法安装时使用本 skill 内置流程。
 ---
 

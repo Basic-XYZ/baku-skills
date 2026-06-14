@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Baku Cards</title>
+  <style>
+    :root { --ink:#161A22; --paper:#F7F4EA; --field:#E9E2D0; --green:#18A058; --blue:#2563EB; --amber:#D97706; --red:#D64B3A; --line:#D8D0BD; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#D8D0BD; color:var(--ink); font:16px/1.65 "Noto Sans SC", system-ui, sans-serif; padding:32px; }
+    .deck { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px; max-width:1180px; margin:auto; }
+    .card { aspect-ratio:3/4; background:var(--paper); border:1px solid var(--line); border-radius:8px; padding:28px; display:flex; flex-direction:column; justify-content:space-between; }
+    .kicker { font:700 .78rem/1 "JetBrains Mono", monospace; color:var(--green); text-transform:uppercase; }
+    h1, h2 { font-family:"Noto Serif SC", serif; line-height:1.12; margin:18px 0; }
+    h1 { font-size:clamp(2rem, 7vw, 3.4rem); }
+    h2 { font-size:clamp(1.6rem, 5vw, 2.4rem); }
+    .mark { width:48px; height:48px; border-radius:50%; object-fit:cover; border:1px solid var(--line); }
+    .footer { display:flex; justify-content:space-between; align-items:center; font-size:.82rem; color:#4A4F5B; }
+    .point { border-top:1px solid var(--line); padding-top:14px; margin-top:14px; }
+  </style>
+</head>
+<body>
+  <main class="deck">
+    <section class="card">
+      <div><div class="kicker">BAKU / 01</div><h1>先给结论，再给证据链</h1></div>
+      <div class="footer"><span>Basic-XYZ</span><img class="mark" src="./avatar.jpg" alt="Baku avatar"></div>
+    </section>
+    <section class="card">
+      <div><div class="kicker">BAKU / 02</div><h2>把复杂任务拆成三个层次</h2><div class="point">目标：要得到什么。</div><div class="point">证据：从哪里判断。</div><div class="point">验证：怎么知道完成。</div></div>
+      <div class="footer"><span>design system</span><span>2/3</span></div>
+    </section>
+    <section class="card">
+      <div><div class="kicker">BAKU / 03</div><h2>少一点模板感，多一点真实工作痕迹</h2><p>页面可以漂亮，但不能为了视觉牺牲可执行性。</p></div>
+      <div class="footer"><span>Basic-XYZ</span><span>3/3</span></div>
+    </section>
+  </main>
+</body>
+</html>

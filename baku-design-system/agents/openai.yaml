@@ -1,0 +1,4 @@
+interface:
+  display_name: "Baku Design System"
+  short_description: "用 Baku 的品牌 DNA 和多套风格构建 HTML 页面、图文卡片和个人虚拟形象。"
+  default_prompt: "使用 $baku-design-system 为我构建符合 Baku 品牌 DNA 的页面、图文卡片或虚拟形象。"

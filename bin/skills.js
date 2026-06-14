@@ -25,9 +25,9 @@ const HELP = `
   --help               显示帮助。
 
 示例:
-  npx skills add https://github.com/Basic-XYZ/baku-skills --skill coding-discipline
+  npx skills add https://github.com/Basic-XYZ/baku-skills --skill baku-coding-discipline
   npx skills add /path/to/baku-skills --skill boss-job-hunter --project --symlink
-  npx skills add https://github.com/Basic-XYZ/baku-skills --skill coding-discipline --agent claude-code --global --copy
+  npx skills add https://github.com/Basic-XYZ/baku-skills --skill baku-coding-discipline --agent claude-code --global --copy
 `;
 
 main().catch((error) => {

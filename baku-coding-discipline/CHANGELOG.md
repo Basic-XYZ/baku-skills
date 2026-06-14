@@ -2,7 +2,7 @@
 
 ## 0.1.0 - 2026-06-11
 
-- 将 `coding-discipline` 发布为独立开源 skill 项目。
+- 将 `baku-coding-discipline` 发布为独立开源 skill 项目。
 - 增加安装、校验、贡献和许可证文件。
 - 保留原有模式路由和工程成熟度参考文档。
 - 明确相关 skill 不可用时的回退行为。

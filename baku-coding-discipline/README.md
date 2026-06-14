@@ -1,6 +1,6 @@
 # 编码纪律
 
-`coding-discipline` 是一个面向 Codex 风格 Agent 的工程纪律 skill，用来让软件改动保持小、可验证、可审查。它会在实现前把编码任务路由到最轻合适流程：微小修改、行为变更、故障诊断、重构或审查。
+`baku-coding-discipline` 是一个面向 Codex 风格 Agent 的工程纪律 skill，用来让软件改动保持小、可验证、可审查。它会在实现前把编码任务路由到最轻合适流程：微小修改、行为变更、故障诊断、重构或审查。
 
 这个 skill 有意保持流程化。它不会往你的代码库里引入框架；它约束 Agent 如何思考、编辑、验证和汇报。
 
@@ -42,10 +42,10 @@
 推荐的 Codex 全局安装方式：
 
 ```bash
-npx skills add https://github.com/Basic-XYZ/baku-skills --skill coding-discipline --global --copy
+npx skills add https://github.com/Basic-XYZ/baku-skills --skill baku-coding-discipline --global --copy
 ```
 
-上面的命令使用 [skills.sh](https://www.skills.sh/) 的安装方式，会把 skill 安装到 `~/.agents/skills/coding-discipline`。
+上面的命令使用 [skills.sh](https://www.skills.sh/) 的安装方式，会把 skill 安装到 `~/.agents/skills/baku-coding-discipline`。
 
 ### 全局 Skill 还是项目 Skill
 
@@ -56,37 +56,37 @@ npx skills add https://github.com/Basic-XYZ/baku-skills --skill coding-disciplin
 项目内 Codex 安装：
 
 ```bash
-npx skills add https://github.com/Basic-XYZ/baku-skills --skill coding-discipline --project --copy
+npx skills add https://github.com/Basic-XYZ/baku-skills --skill baku-coding-discipline --project --copy
 ```
 
-这会安装到当前工作目录的 `./.agents/skills/coding-discipline`。
+这会安装到当前工作目录的 `./.agents/skills/baku-coding-discipline`。
 
 如果要按 Claude Code 的目录组织安装：
 
 ```bash
-npx skills add https://github.com/Basic-XYZ/baku-skills --skill coding-discipline --agent claude-code --global --copy
+npx skills add https://github.com/Basic-XYZ/baku-skills --skill baku-coding-discipline --agent claude-code --global --copy
 ```
 
 ### 安装位置
 
 如果运行时允许选择目标目录，安装到下面其中一个位置：
 
-- `~/.agents/skills/coding-discipline`：供读取 `.agents/skills` 的 Agent 使用。
-- `~/.codex/skills/coding-discipline`：供读取 `.codex/skills` 的 Codex 配置使用。
+- `~/.agents/skills/baku-coding-discipline`：供读取 `.agents/skills` 的 Agent 使用。
+- `~/.codex/skills/baku-coding-discipline`：供读取 `.codex/skills` 的 Codex 配置使用。
 - 项目内 skill 目录：当规则需要跟随某个仓库一起维护时使用。
 
 如果你的 Claude Code 环境不支持 installer 命令或这个 skill 格式，可以手动复制：
 
 ```bash
 mkdir -p ~/.agents/skills
-cp -R /path/to/coding-discipline ~/.agents/skills/coding-discipline
+cp -R /path/to/baku-coding-discipline ~/.agents/skills/baku-coding-discipline
 ```
 
 也可以保留一个源码 checkout，然后软链过去：
 
 ```bash
 mkdir -p ~/.agents/skills
-ln -s /path/to/coding-discipline ~/.agents/skills/coding-discipline
+ln -s /path/to/baku-coding-discipline ~/.agents/skills/baku-coding-discipline
 ```
 
 安装新 skill 后，重启 Codex，让下一次会话能发现它。

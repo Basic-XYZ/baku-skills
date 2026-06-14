@@ -15,7 +15,7 @@ English:
 ## 安装命令
 
 ```bash
-npx skills add https://github.com/Basic-XYZ/baku-skills --skill coding-discipline
+npx skills add https://github.com/Basic-XYZ/baku-skills --skill baku-coding-discipline
 npx skills add https://github.com/Basic-XYZ/baku-skills --skill boss-job-hunter
 npx skills add https://github.com/Basic-XYZ/baku-skills --skill codex-history-recovery
 ```
@@ -41,14 +41,14 @@ https://skills.sh/Basic-XYZ/baku-skills
 
 目前包含：
 
-- `coding-discipline`：约束 AI 写代码时先明确目标、假设和验证标准，减少乱猜、过度设计和无关改动。
+- `baku-coding-discipline`：约束 AI 写代码时先明确目标、假设和验证标准，减少乱猜、过度设计和无关改动。
 - `boss-job-hunter`：按简历和偏好筛选 BOSS 直聘岗位，强调 JD 证据和现实匹配。
 - `codex-history-recovery`：排查和恢复 Codex Desktop 本地历史可见性。
 
 安装示例：
 
 ```bash
-npx skills add https://github.com/Basic-XYZ/baku-skills --skill coding-discipline
+npx skills add https://github.com/Basic-XYZ/baku-skills --skill baku-coding-discipline
 ```
 
 这个仓库偏中文工作流，不追求数量，只放我自己真的用过、觉得能减少返工的 skill。欢迎试用，也欢迎给 issue 反馈哪些场景触发不自然。
@@ -75,14 +75,14 @@ https://skills.sh/Basic-XYZ/baku-skills
 
 Current skills:
 
-- `coding-discipline`: keeps coding agents scoped, evidence-driven, and verification-oriented. This is the one I recommend installing first.
+- `baku-coding-discipline`: keeps coding agents scoped, evidence-driven, and verification-oriented. This is the one I recommend installing first.
 - `boss-job-hunter`: evaluates BOSS Zhipin job postings against a resume and preferences, using JD-first evidence instead of keyword-only matching.
 - `codex-history-recovery`: helps inspect and recover local Codex Desktop history metadata after provider, model, or account changes.
 
 Install example:
 
 ```bash
-npx skills add https://github.com/Basic-XYZ/baku-skills --skill coding-discipline
+npx skills add https://github.com/Basic-XYZ/baku-skills --skill baku-coding-discipline
 ```
 
 This is not a huge skills collection. I am intentionally keeping it small and based on real usage. Feedback welcome, especially around whether the skill triggers feel natural and whether the coding workflow is too strict or useful.
@@ -94,11 +94,11 @@ This is not a huge skills collection. I am intentionally keeping it small and ba
 I published Baku Skills, a Chinese-first Agent Skills repo for real Codex / Claude Code workflows.
 
 Current skills:
-- coding-discipline: scoped, evidence-driven coding agent workflow
+- baku-coding-discipline: scoped, evidence-driven coding agent workflow
 - boss-job-hunter: BOSS Zhipin job matching from resume + JD evidence
 - codex-history-recovery: local Codex Desktop history recovery
 
-npx skills add https://github.com/Basic-XYZ/baku-skills --skill coding-discipline
+npx skills add https://github.com/Basic-XYZ/baku-skills --skill baku-coding-discipline
 
 https://github.com/Basic-XYZ/baku-skills
 https://skills.sh/Basic-XYZ/baku-skills

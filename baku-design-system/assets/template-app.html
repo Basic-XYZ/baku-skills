@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Baku App</title>
+  <style>
+    :root { --ink:#161A22; --paper:#F7F4EA; --field:#E9E2D0; --green:#18A058; --blue:#2563EB; --amber:#D97706; --line:#D8D0BD; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:14px/1.55 "Noto Sans SC", system-ui, sans-serif; }
+    .app { min-height:100vh; display:grid; grid-template-columns:260px 1fr; }
+    aside { border-right:1px solid var(--line); padding:20px; background:#EFE8D8; }
+    main { padding:20px; display:grid; grid-template-rows:auto 1fr; gap:16px; min-width:0; }
+    .topbar, .panel { border:1px solid var(--line); border-radius:8px; background:rgba(255,255,255,.34); }
+    .topbar { min-height:64px; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 16px; }
+    .grid { display:grid; grid-template-columns:1fr 340px; gap:16px; min-height:0; }
+    .panel { padding:16px; overflow:auto; }
+    .nav { display:grid; gap:8px; margin-top:24px; }
+    .nav button, .action { border:1px solid var(--line); background:var(--paper); border-radius:6px; padding:10px 12px; text-align:left; }
+    .nav button.active { border-color:var(--green); box-shadow:inset 3px 0 0 var(--green); }
+    .rows { display:grid; gap:10px; }
+    .row { border:1px solid var(--line); border-radius:6px; padding:14px; background:var(--paper); }
+    @media (max-width:900px){ .app{grid-template-columns:1fr;} aside{border-right:0;border-bottom:1px solid var(--line);} .grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside>
+      <strong>Baku Console</strong>
+      <div class="nav"><button class="active">任务</button><button>证据</button><button>输出</button></div>
+    </aside>
+    <main>
+      <section class="topbar"><strong>当前工作流</strong><button class="action">运行检查</button></section>
+      <section class="grid">
+        <div class="panel"><h1>任务列表</h1><div class="rows"><div class="row">收集输入</div><div class="row">生成草案</div><div class="row">验证输出</div></div></div>
+        <div class="panel"><h2>详情</h2><p>这里放选中项证据、日志和下一步动作。</p></div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

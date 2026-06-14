@@ -121,6 +121,11 @@ def check_skill_frontmatter() -> None:
         if field not in frontmatter:
             fail(f"SKILL.md frontmatter 缺少 {field}")
 
+    frontmatter_lines = {line.strip() for line in frontmatter.splitlines()}
+    expected_name = ROOT.name
+    if f"name: {expected_name}" not in frontmatter_lines:
+        fail(f"SKILL.md frontmatter name 必须等于目录名: {expected_name}")
+
 
 def check_markdown_links() -> None:
     for path in ROOT.rglob("*.md"):
@@ -192,7 +197,7 @@ def main() -> None:
     check_long_references_have_toc()
     check_markdown_links()
     check_for_obvious_secrets()
-    print("OK: coding-discipline skill 包校验通过")
+    print("OK: baku-coding-discipline skill 包校验通过")
 
 
 if __name__ == "__main__":
